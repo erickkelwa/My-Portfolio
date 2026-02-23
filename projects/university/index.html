@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPortal Kenya | Your Journey to Excellence</title>
+    <meta name="description"
+        content="Apply for admission to Kenya's top universities. Register now to start your academic journey.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Edu<span>Portal</span> Kenya</div>
+            <ul class="nav-links">
+                <li><a href="#home" target="_self">Home</a></li>
+                <li><a href="#universities" target="_self">Universities</a></li>
+                <li><a href="#activities" target="_self">Activities</a></li>
+                <li><a href="#apply" class="btn-primary" target="_self">Apply Now</a></li>
+                <li>
+                    <button id="themeToggle" class="theme-toggle" title="Toggle Theme">
+                        <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>Begin Your Academic <span>Excellence</span> in Kenya</h1>
+                    <p>Apply to the most prestigious institutions in Nairobi and beyond. Your future starts with a
+                        single click.</p>
+                    <div class="hero-btns">
+                        <a href="#apply" class="btn-primary" target="_self">Register Today</a>
+                        <a href="#universities" class="btn-secondary" target="_self">Explore Universities</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="hero.png" alt="Kenyan University Campus">
+                </div>
+            </div>
+        </section>
+
+        <section id="universities" class="universities">
+            <div class="container">
+                <h2 class="section-title">Premier <span>Institutions</span></h2>
+                <div class="university-grid">
+                    <div class="uni-card">
+                        <div class="uni-img">
+                            <img src="uon.png" alt="University of Nairobi">
+                        </div>
+                        <div class="uni-info">
+                            <h3>University of Nairobi</h3>
+                            <p>The leading university in East and Central Africa, known for its academic rigour.</p>
+                        </div>
+                    </div>
+                    <div class="uni-card">
+                        <div class="uni-img">
+                            <img src="ku.png" alt="Kenyatta University">
+                        </div>
+                        <div class="uni-info">
+                            <h3>Kenyatta University</h3>
+                            <p>A hub of innovation and creative excellence located along Thika Road.</p>
+                        </div>
+                    </div>
+                    <div class="uni-card">
+                        <div class="uni-img">
+                            <img src="jkuat.png" alt="JKUAT">
+                        </div>
+                        <div class="uni-info">
+                            <h3>JKUAT</h3>
+                            <p>Setting trends in technology, agriculture, and engineering excellence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="activities" class="universities" style="background: var(--bg-light);">
+            <div class="container">
+                <h2 class="section-title">Campus <span>Life</span> & Activities</h2>
+                <div class="university-grid">
+                    <div class="uni-card">
+                        <div class="uni-img">
+                            <img src="sports.png" alt="University Sports">
+                        </div>
+                        <div class="uni-info">
+                            <h3>Athletics & Sports</h3>
+                            <p>From soccer to basketball, our students excel in regional and national sports
+                                competitions.</p>
+                        </div>
+                    </div>
+                    <div class="uni-card">
+                        <div class="uni-img">
+                            <img src="culture.png" alt="Cultural Activities">
+                        </div>
+                        <div class="uni-info">
+                            <h3>Culture & Arts</h3>
+                            <p>Rich cultural festivals and performing arts that celebrate the diverse heritage of Kenya.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="apply" class="apply-section">
+            <div class="container">
+                <div class="apply-wrapper">
+                    <div class="apply-form-container">
+                        <h2>Admission <span>Application</span></h2>
+                        <p>Fill out the form below to start your registration process.</p>
+                        <form id="admissionForm">
+                            <div class="form-group">
+                                <label for="fullname">Full Name</label>
+                                <input type="text" id="fullname" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" placeholder="example@email.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" placeholder="+254..." required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="university">Preferred University</label>
+                                <select id="university" required>
+                                    <option value="" disabled selected>Select an institution</option>
+                                    <option value="uon">University of Nairobi</option>
+                                    <option value="ku">Kenyatta University</option>
+                                    <option value="jkuat">JKUAT</option>
+                                    <option value="strathmore">Strathmore University</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="course">Course of Interest</label>
+                                <input type="text" id="course" placeholder="e.g. Computer Science" required>
+                            </div>
+                            <button type="submit" class="btn-submit">Submit Application</button>
+                        </form>
+                    </div>
+                    <div class="apply-info">
+                        <h3>Visit Our Office</h3>
+                        <p>We are located in the heart of Nairobi, ready to assist you in person.</p>
+                        <div class="map-container">
+                            <iframe
+                                src="https://maps.google.com/maps?q=University%20of%20Nairobi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Edu<span>Portal</span> Kenya</div>
+                <p>&copy; 2026 EduPortal Kenya. Empowering the future generation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sita Mbili FC | Pride of Nairobi West</title>
+  <link rel="icon" type="image/png" href="sita2.png" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --color-primary-blue: #0033A0;
+      --color-secondary-yellow: #FFD700;
+      --color-accent-blue: #0056B3;
+      --color-white: #FFFFFF;
+      --color-black: #1A1A1A;
+      --bg-dark: #0A192F;
+      --bg-light: #F4F4F9;
+      --nav-bg: #0033A0;
+      --font-base: 'Inter', system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-base);
+      background-color: var(--bg-light);
+      color: var(--color-black);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: var(--nav-bg);
+      padding: 1rem 0;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-secondary-yellow);
+      text-decoration: none;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--color-secondary-yellow);
+      background-color: rgba(255, 215, 0, 0.1);
+    }
+
+    .nav-link.active {
+      background-color: var(--color-secondary-yellow);
+      color: var(--color-primary-blue);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 80vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+      z-index: 1;
+    }
+
+    .hero-slide::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+      color: #fff;
+    }
+
+    .hero h1 span {
+      color: var(--color-secondary-yellow);
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-inline: auto;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .btn-primary {
+      background-color: var(--color-secondary-yellow);
+      color: var(--color-primary-blue);
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-5px) scale(1.05);
+      background-color: var(--color-primary-blue);
+      color: var(--color-secondary-yellow);
+    }
+
+    .btn-secondary {
+      border: 2px solid #fff;
+      color: #fff;
+      backdrop-filter: blur(4px);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--color-primary-blue);
+      border-color: var(--color-primary-blue);
+      transform: translateY(-5px) scale(1.05);
+    }
+
+    /* Journey Section */
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--color-primary-blue);
+      margin-bottom: 1rem;
+    }
+
+    .section-title .underline {
+      height: 4px;
+      width: 80px;
+      background-color: var(--color-secondary-yellow);
+      margin: 0 auto;
+    }
+
+    .journey-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 5rem;
+    }
+
+    .journey-image img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      transition: all 0.4s ease;
+    }
+
+    .journey-image img:hover {
+      transform: scale(1.03);
+    }
+
+    .journey-text h3 {
+      font-size: 1.8rem;
+      color: var(--color-primary-blue);
+      margin-bottom: 1.5rem;
+    }
+
+    .vision-card {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--color-secondary-yellow);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      margin-top: 2rem;
+    }
+
+    /* Milestones */
+    .milestones-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .milestone-card {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .milestone-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .milestone-card h4 {
+      font-size: 1.5rem;
+      color: var(--color-secondary-yellow);
+      font-weight: 800;
+    }
+
+    /* Champion Banner */
+    .champion-banner {
+      background-color: var(--color-primary-blue);
+      color: #fff;
+      border-radius: 16px;
+      padding: 3rem;
+      text-align: center;
+      margin-top: 5rem;
+    }
+
+    .champion-banner .trophy {
+      font-size: 3rem;
+      color: var(--color-secondary-yellow);
+      margin-bottom: 1rem;
+    }
+
+    /* Standings */
+    .standings {
+      background-color: #eee;
+      text-align: center;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0a192f;
+      color: #fff;
+      padding: 5rem 0 2rem;
+      border-top: 5px solid var(--color-secondary-yellow);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer-col h3 {
+      color: var(--color-secondary-yellow);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-secondary-yellow);
+      padding-left: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .journey-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="logo">SITAMBILI FC</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="donate.html" class="nav-link">Support Us</a></li>
+        <li><a href="shop.html" class="nav-link">Shop</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-slide active" style="background-image: url('jersey3.webp');"></div>
+    <div class="hero-slide" style="background-image: url('success.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('jersey1.jpg');"></div>
+
+    <div class="hero-content container">
+      <h1>Welcome to <span>Sitambili FC</span></h1>
+      <p>Pride of Nairobi West. Celebrating Victory, Building Community.</p>
+      <div class="hero-btns">
+        <a href="#success" class="btn btn-primary">Our Success</a>
+        <a href="donate.html" class="btn btn-secondary">Support Us</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="success" class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>OUR JOURNEY</h2>
+        <div class="underline"></div>
+      </div>
+
+      <div class="journey-grid">
+        <div class="journey-image">
+          <img src="success.jpg" alt="Team Sucess">
+        </div>
+        <div class="journey-text">
+          <h3>More Than Just A Club</h3>
+          <p>Sita Mbili FC was established in 2015 with a mission to nurture football talent within the Kibera Lindi
+            community. Starting out with friendly matches and local tournaments, the club gradually built its foundation
+            before entering competitive football through the Interbase League.</p>
+          <div class="vision-card">
+            <h4><i class="fas fa-bullseye"></i> Vision & Goals</h4>
+            <p><i>"Committed to uplifting youth in Kibera by using football as a tool for empowerment, skill
+                development, and social transformation."</i></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title" style="margin-top: 5rem; margin-bottom: 2rem;">
+        <h3>Key Milestones</h3>
+      </div>
+
+      <div class="milestones-grid">
+        <div class="milestone-card" style="border-top: 4px solid var(--color-primary-blue);">
+          <h4>2015</h4>
+          <h5>Established</h5>
+          <p>Starting out with friendly matches in Kibera Lindi.</p>
+        </div>
+        <div class="milestone-card" style="border-top: 4px solid var(--color-secondary-yellow);">
+          <h4>2019</h4>
+          <h5>Interbase Debut</h5>
+          <p>Finished 7th in our first competitive season.</p>
+        </div>
+        <div class="milestone-card" style="border-top: 4px solid var(--color-primary-blue);">
+          <h4>2020</h4>
+          <h5>Rising Up</h5>
+          <p>Climbed to 2nd place in the Interbase League.</p>
+        </div>
+        <div class="milestone-card" style="border-top: 4px solid var(--color-secondary-yellow);">
+          <h4>2024</h4>
+          <h5>Champions</h5>
+          <p>Crowned champions of the FKF Nairobi West County League.</p>
+        </div>
+      </div>
+
+      <div class="champion-banner">
+        <div class="trophy"><i class="fas fa-trophy"></i></div>
+        <h3 style="color: var(--color-secondary-yellow); font-size: 2rem;">CHAMPIONS OF 82</h3>
+        <p style="max-width: 700px; margin: 1rem auto; opacity: 0.9;">One of our proudest moments was emerging as the
+          winners of the 82 Sport Tournament. This victory stands as a testament to our skill and teamwork.</p>
+        <span
+          style="background: rgba(255,215,0,0.2); padding: 0.5rem 1.5rem; border-radius: 50px; color: var(--color-secondary-yellow); font-weight: 600;">Historic
+          Victory</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section standings">
+    <div class="container">
+      <h2 style="color: var(--color-primary-blue); font-weight: 800;">Season Standings</h2>
+      <p style="margin-bottom: 2rem;">Keep up with Sitambili FC's performance in the FKF Nairobi West Regional League.
+      </p>
+      <a href="https://fkfnairobiwest.ke/" target="_blank" class="btn btn-primary"
+        style="display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 8px;">
+        <i class="fas fa-list"></i> View League Table <i class="fas fa-external-link-alt"
+          style="font-size: 0.8rem;"></i>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+            <i class="fas fa-trophy" style="color: var(--color-secondary-yellow); font-size: 1.5rem;"></i>
+            <h2 style="color: #fff; margin: 0; font-size: 1.5rem;">SITAMBILI FC</h2>
+          </div>
+          <p style="opacity: 0.7; font-size: 0.9rem;">Established in 2015, dedicated to nurturing talent and empowering
+            youth in Kibera.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Navigate</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#success">Our Success</a></li>
+            <li><a href="donate.html">Support Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt" style="color: var(--color-secondary-yellow); min-width: 20px;"></i>
+              Nairobi West, Kenya</li>
+            <li><i class="fas fa-phone" style="color: var(--color-secondary-yellow); min-width: 20px;"></i> +254 790 591
+              621</li>
+            <li><i class="fas fa-envelope" style="color: var(--color-secondary-yellow); min-width: 20px;"></i>
+              info@sitambilifc.com</li>
+          </ul>
+        </div>
+      </div>
+      <div
+        style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; opacity: 0.6; font-size: 0.8rem;">
+        <p>&copy; 2024 Sitambili Football Club. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Hero Slideshow
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+
+    function nextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+
+    setInterval(nextSlide, 5000);
+  </script>
+</body>
+
+</html>

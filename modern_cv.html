@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Erick Kelwa - Premium Resume</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --primary: #0a192f;
+            --accent: #64ffda;
+            --text-dark: #112240;
+            --text-muted: #8892b0;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.95);
+        }
+
+        body {
+            background: #f0f2f5;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            padding: 40px 0;
+        }
+
+        .resume-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--white);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* Sidebar Styling */
+        .resume-sidebar {
+            flex: 0 0 320px;
+            background: var(--primary);
+            color: var(--white);
+            padding: 40px 30px;
+        }
+
+        .profile-img-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            padding: 5px;
+            background: var(--primary);
+        }
+
+        .sidebar-section {
+            margin-bottom: 35px;
+        }
+
+        .sidebar-title {
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+            padding-bottom: 5px;
+        }
+
+        .sidebar-content {
+            font-size: 0.9rem;
+            color: #ccd6f6;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .contact-item i {
+            color: var(--accent);
+        }
+
+        /* Main Content Styling */
+        .resume-main {
+            flex: 1;
+            padding: 50px;
+            background: var(--white);
+        }
+
+        .main-header {
+            margin-bottom: 40px;
+        }
+
+        .main-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--primary);
+        }
+
+        .main-header .job-title {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .section-header h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-header .line {
+            flex: 1;
+            height: 2px;
+            background: #e6e9ef;
+        }
+
+        .experience-item {
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid #e6e9ef;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 2px solid var(--primary);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+
+        .item-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .item-subtitle {
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .item-desc {
+            font-size: 0.95rem;
+            color: #4a5568;
+            margin-bottom: 0;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .item-desc li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 5px;
+        }
+
+        .item-desc li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .skill-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .badge-custom {
+            background: #f0f4ff;
+            color: var(--primary);
+            border: 1px solid #dce3f1;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .no-print-zone {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .btn-modern {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn-modern:hover {
+            transform: translateY(-3px);
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        @media screen and (max-width: 768px) {
+            .resume-wrapper {
+                flex-direction: column;
+            }
+
+            .resume-sidebar {
+                flex: none;
+                width: 100%;
+            }
+
+            .resume-main {
+                padding: 30px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .resume-wrapper {
+                box-shadow: none;
+                margin: 0;
+                max-width: 100%;
+            }
+
+            .no-print-zone {
+                display: none;
+            }
+
+            .resume-sidebar {
+                background: #0a192f !important;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .sidebar-title {
+                color: #64ffda !important;
+                border-bottom-color: rgba(100, 255, 218, 0.2) !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="resume-wrapper">
+        <!-- Sidebar -->
+        <aside class="resume-sidebar">
+            <div class="profile-img-container">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200"
+                    alt="Erick Kelwa" class="profile-img">
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Contact</h3>
+                <div class="sidebar-content">
+                    <div class="contact-item">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span>Nairobi, Kenya</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="bi bi-telephone-fill"></i>
+                        <span>0728664792</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="bi bi-envelope-fill"></i>
+                        <span>erickkelwa9@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="bi bi-globe"></i>
+                        <span>www.erickkelwa.dev</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Expertise</h3>
+                <div class="sidebar-content">
+                    <div class="mb-2">Frontend: React, JS, CSS3</div>
+                    <div class="mb-2">Backend: Node.js, PHP, MySQL</div>
+                    <div class="mb-2">Design: UI/UX, Glassmorphism</div>
+                    <div class="mb-2">Tools: Git, VS Code, Webpack</div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Education</h3>
+                <div class="sidebar-content">
+                    <div class="mb-3">
+                        <strong>Software Engineering</strong><br>
+                        IST (2024 - Present)
+                    </div>
+                    <div class="mb-3">
+                        <strong>B.A. English Lit</strong><br>
+                        Kenyatta University (2024)
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Soft Skills</h3>
+                <div class="sidebar-content">
+                    <div class="mb-1">Analytical Thinking</div>
+                    <div class="mb-1">Creative Problem-Solving</div>
+                    <div class="mb-1">Documentation Expert</div>
+                    <div class="mb-1">Team Collaboration</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="resume-main">
+            <header class="main-header">
+                <h1>ERICK KELWA</h1>
+                <div class="job-title">Creative Developer & Software Engineer</div>
+            </header>
+
+            <div class="summary">
+                <p>Dedicated Software Developer with a unique blend of technical expertise and analytical precision.
+                    Specialized in building premium, user-centric web applications with a focus on modern aesthetics and
+                    efficient code. Proven ability to translate complex requirements into scalable digital solutions.
+                </p>
+            </div>
+
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">EduPortal Kenya | Admission System</div>
+                    <div class="item-date">2026</div>
+                </div>
+                <div class="item-subtitle">Lead Developer</div>
+                <ul class="item-desc">
+                    <li>Developed a high-performance university application portal for multiple Kenyan institutions.
+                    </li>
+                    <li>Integrated interactive campus life modules and secure registration workflows.</li>
+                    <li>Designed an adaptive interface with seamless Dark/Light mode transitions.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">ECO-SHOP | Sustainable E-Commerce</div>
+                    <div class="item-date">2026</div>
+                </div>
+                <div class="item-subtitle">Full Stack Developer</div>
+                <ul class="item-desc">
+                    <li>Engineered a minimalist e-commerce platform focused on sustainable luxury goods.</li>
+                    <li>Implemented a dynamic "Community Selling" engine with real-time inventory management.</li>
+                    <li>Optimized application state handling for a fluid, lag-free shopping experience.</li>
+                </ul>
+            </div>
+
+            <div class="section-header">
+                <h2>Professional Experience</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Software Developer Intern</div>
+                    <div class="item-date">2025 – Present</div>
+                </div>
+                <div class="item-subtitle">Tech Innovators Ltd.</div>
+                <ul class="item-desc">
+                    <li>Driving the development of responsive web applications using modern JavaScript frameworks.</li>
+                    <li>Collaborating with UI designers to implement pixel-perfect, accessible components.</li>
+                    <li>Optimizing core codebase resulting in a 25% improvement in page load speeds.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Freelance Web Developer</div>
+                    <div class="item-date">2024</div>
+                </div>
+                <div class="item-subtitle">Self-Employed</div>
+                <ul class="item-desc">
+                    <li>Architected and launched digital identities for local businesses and startups.</li>
+                    <li>Managed end-to-end project lifecycles, from discovery to deployment and SEO optimization.</li>
+                </ul>
+            </div>
+
+            <div class="section-header">
+                <h2>Technical Proficiencies</h2>
+                <div class="line"></div>
+            </div>
+            <div class="skill-badges">
+                <span class="badge-custom">JavaScript (ES6+)</span>
+                <span class="badge-custom">React.js</span>
+                <span class="badge-custom">Node.js</span>
+                <span class="badge-custom">PHP / Laravel</span>
+                <span class="badge-custom">MySQL</span>
+                <span class="badge-custom">HTML5 / CSS3</span>
+                <span class="badge-custom">Bootstrap 5</span>
+                <span class="badge-custom">Git / GitHub</span>
+            </div>
+        </main>
+    </div>
+
+    <div class="no-print-zone">
+        <button class="btn-modern" onclick="window.print()">
+            <i class="bi bi-printer me-2"></i> EXPORT TO PDF
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

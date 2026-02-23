@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Us | Sita Mbili FC</title>
+    <link rel="icon" type="image/png" href="sita2.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color-primary-blue: #0033A0;
+            --color-secondary-yellow: #FFD700;
+            --color-white: #FFFFFF;
+            --color-black: #1A1A1A;
+            --bg-light: #F4F4F9;
+            --nav-bg: #0033A0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--color-black);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .navbar {
+            background-color: var(--nav-bg);
+            padding: 1rem 0;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-secondary-yellow);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-link:hover {
+            color: var(--color-secondary-yellow);
+        }
+
+        .nav-link.active {
+            background-color: var(--color-secondary-yellow);
+            color: var(--color-primary-blue);
+        }
+
+        .header {
+            text-align: center;
+            padding: 5rem 0 3rem;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            color: var(--color-primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .donate-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            padding-bottom: 5rem;
+        }
+
+        .method-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .icon-box {
+            padding: 1rem;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sponsor-card {
+            background: var(--color-primary-blue);
+            padding: 2.5rem;
+            border-radius: 12px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .btn-yellow {
+            display: inline-block;
+            background: var(--color-secondary-yellow);
+            color: var(--color-primary-blue);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 800;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+
+        .notify-form {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--color-primary-blue);
+            color: #fff;
+            font-weight: 700;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.95);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            text-align: center;
+            padding: 2rem;
+            z-index: 10;
+        }
+
+        @media (max-width: 900px) {
+            .donate-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">SITAMBILI FC</a>
+            <ul class="nav-links" style="display: flex;">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="donate.html" class="nav-link active">Support Us</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="header">
+            <h1>Support Our Club</h1>
+            <p style="max-width: 750px; margin: 0 auto; color: #555;">Your support helps us nurture local talent in
+                Kibera and keep the spirit of Sitambili FC alive.</p>
+        </header>
+
+        <div class="donate-grid">
+            <div class="methods">
+                <h2
+                    style="color: var(--color-primary-blue); border-bottom: 2px solid var(--color-secondary-yellow); padding-bottom: 0.5rem; margin-bottom: 2rem; display: inline-block;">
+                    Payment Methods</h2>
+
+                <div class="method-card">
+                    <div class="icon-box" style="background: #e2f7e2;">
+                        <i class="fas fa-mobile-alt" style="font-size: 2rem; color: #28a745;"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: #28a745;">M-Pesa Paybill</h3>
+                        <p>Paybill: <strong>123456</strong></p>
+                        <p>Account: <strong>Sitambili</strong></p>
+                    </div>
+                </div>
+
+                <div class="method-card">
+                    <div class="icon-box" style="background: #e2eef7;">
+                        <i class="fas fa-university" style="font-size: 2rem; color: #007bff;"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: #007bff;">Bank Transfer</h3>
+                        <p>Bank: <strong>KCB Bank</strong></p>
+                        <p>Acc/No: <strong>1100000000</strong></p>
+                    </div>
+                </div>
+
+                <div class="sponsor-card">
+                    <i class="fas fa-heart"
+                        style="font-size: 2.5rem; color: var(--color-secondary-yellow); margin-bottom: 1rem;"></i>
+                    <h3>Become A Sponsor</h3>
+                    <p style="opacity: 0.9; margin-bottom: 1rem;">For corporate partnerships or large contributions,
+                        please contact us directly.</p>
+                    <a href="contact.html" class="btn-yellow">Get In Touch</a>
+                </div>
+            </div>
+
+            <div class="notify-form">
+                <h2 style="color: var(--color-primary-blue); margin-bottom: 1rem;">Notify Contribution</h2>
+                <p style="margin-bottom: 2rem; color: #666; font-size: 0.9rem;">Already made a donation? Let us know so
+                    we can record it.</p>
+
+                <form id="donationForm">
+                    <div class="form-group">
+                        <label>Your Name / Organization</label>
+                        <input type="text" placeholder="e.g. John Doe" required>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label>Amount (KES)</label>
+                            <input type="number" placeholder="1000" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Method</label>
+                            <select>
+                                <option>M-Pesa</option>
+                                <option>Bank Transfer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number (Optional)</label>
+                        <input type="text" placeholder="+254...">
+                    </div>
+                    <button type="submit" class="submit-btn" style="margin-top: 1rem;">Submit Notification</button>
+                </form>
+
+                <div id="overlay">
+                    <i class="fas fa-check-circle" style="font-size: 4rem; color: #28a745; margin-bottom: 1rem;"></i>
+                    <h2 style="color: #28a745;">Notification Received!</h2>
+                    <p style="color: #555;">Thank you for your support. Our team will verify the donation shortly.</p>
+                    <button class="btn-yellow" onclick="document.getElementById('overlay').style.display='none'"
+                        style="border: none; cursor: pointer;">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('donationForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            document.getElementById('overlay').style.display = 'flex';
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>

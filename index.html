@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%230a192f'/%3E%3Ctext x='50%25' y='50%25' dy='.35em' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='20' fill='%2364ffda'%3EE%3C/text%3E%3C/svg%3E">
+    <meta name="description" content="Portfolio of a creative developer. Download CV and view projects.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header id="navbar">
+        <div class="container">
+            <a href="#" class="logo">Erick<span>.</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="mobile-only"><a href="cv.html" class="btn btn-primary">View CV</a></li>
+                </ul>
+                <div class="nav-extra">
+                    <a href="cv.html" class="btn btn-primary">View CV</a>
+                    <div class="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="nav-overlay"></div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <div class="text-content">
+                    <p class="subtitle">Welcome to my world</p>
+                    <h1>Hi, I'm <span class="highlight">Erick Kelwa</span><br>Creative Developer.</h1>
+                    <p class="description">I build interactive web experiences that preserve the beauty of design and
+                        the power of code.</p>
+                    <div class="buttons">
+                        <a href="#projects" class="btn btn-secondary">View Work</a>
+                        <a href="cv.html" class="btn btn-primary">View CV <i class="fas fa-eye"></i></a>
+                    </div>
+                </div>
+                <div class="visual-content">
+                    <div class="blob"></div>
+                    <!-- Placeholder for a hero image or 3D element -->
+                    <div class="hero-image-placeholder">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>I am a passionate developer with a knack for creating seamless digital experiences. With a
+                            strong foundation in modern web technologies, I transform ideas into high-quality, scalable
+                            code. My journey involves constant learning and adapting to new trends to deliver the best
+                            results.</p>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <h3>1</h3>
+                                <p>Year Exp.</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>3+</h3>
+                                <p>Projects</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>100%</h3>
+                                <p>Dedication</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-cards">
+                        <div class="card glass">
+                            <i class="fas fa-laptop-code"></i>
+                            <h3>Development</h3>
+                        </div>
+                        <div class="card glass">
+                            <i class="fas fa-paint-brush"></i>
+                            <h3>Design</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">My Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-react"></i>
+                        <span>React</span>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-git-alt"></i>
+                        <span>Git</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <!-- Project Card 1: EduPortal Kenya -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="projects/university/hero.png" alt="EduPortal Kenya">
+                        </div>
+                        <div class="project-info">
+                            <h3>EduPortal Kenya</h3>
+                            <p>A comprehensive university application portal for Kenyan institutions, featuring dark
+                                mode and interactive campus life highlights.</p>
+                            <div class="project-links">
+                                <a href="projects/university/index.html" class="btn btn-primary btn-sm"
+                                    style="padding: 0.5rem 1rem; font-size: 0.8rem;">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2: ECO-SHOP -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=800"
+                                alt="ECO-SHOP">
+                        </div>
+                        <div class="project-info">
+                            <h3>ECO-SHOP</h3>
+                            <p>A sustainable luxury e-commerce platform with a minimalist design, featuring a smooth
+                                shopping experience and user-driven sell page.</p>
+                            <div class="project-links">
+                                <a href="projects/e-commerce/index.html" class="btn btn-primary btn-sm"
+                                    style="padding: 0.5rem 1rem; font-size: 0.8rem;">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3: Sitambili FC -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="projects/sitambili-fc/success.jpg" alt="Sitambili FC">
+                        </div>
+                        <div class="project-info">
+                            <h3>Sitambili FC</h3>
+                            <p>A premium football club website featuring dynamic animations, league standings, and an
+                                interactive fan experience with a blue and yellow theme.</p>
+                            <div class="project-links">
+                                <a href="projects/sitambili-fc/index.html" class="btn btn-primary btn-sm"
+                                    style="padding: 0.5rem 1rem; font-size: 0.8rem;">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-wrapper glass">
+                    <form id="contact-form">
+                        <div class="input-group">
+                            <input type="text" placeholder="Name" required>
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <textarea placeholder="Message" rows="5" required></textarea>
+                        <button type="button" class="btn btn-primary">Send Message</button>
+                    </form>
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>erickkelwa9@gmail.com</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <p>0728664792</p>
+                        </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Erick Kelwa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

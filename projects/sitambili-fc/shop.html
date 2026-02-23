@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fan Shop | Sita Mbili FC</title>
+    <link rel="icon" type="image/png" href="sita2.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color-primary-blue: #0033A0;
+            --color-secondary-yellow: #FFD700;
+            --color-white: #FFFFFF;
+            --color-black: #1A1A1A;
+            --bg-light: #Fdfdfd;
+            --nav-bg: #0033A0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--color-black);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .navbar {
+            background-color: var(--nav-bg);
+            padding: 1rem 0;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-secondary-yellow);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-link:hover {
+            color: var(--color-secondary-yellow);
+        }
+
+        .nav-link.active {
+            background-color: var(--color-secondary-yellow);
+            color: var(--color-primary-blue);
+        }
+
+        .shop-header {
+            text-align: center;
+            padding: 5rem 0 3rem;
+        }
+
+        .shop-header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--color-primary-blue);
+        }
+
+        .shop-header .underline {
+            height: 4px;
+            width: 80px;
+            background-color: var(--color-secondary-yellow);
+            margin: 1.5rem auto;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .features i {
+            font-size: 2rem;
+            color: var(--color-primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 5rem;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: 0.4s;
+            border: 1px solid #eee;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+        }
+
+        .product-image {
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-secondary-yellow);
+            color: var(--color-primary-blue);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-primary-blue);
+        }
+
+        .buy-btn {
+            background-color: var(--color-primary-blue);
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover {
+            background-color: var(--color-secondary-yellow);
+            color: var(--color-primary-blue);
+            transform: scale(1.05);
+        }
+
+        .order-info {
+            margin-top: 5rem;
+            text-align: center;
+            padding: 3rem;
+            background: var(--color-primary-blue);
+            border-radius: 20px;
+            color: #fff;
+        }
+
+        footer {
+            background-color: #0a192f;
+            color: #fff;
+            padding: 4rem 0 2rem;
+            border-top: 5px solid var(--color-secondary-yellow);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">SITAMBILI FC</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="donate.html" class="nav-link">Support Us</a></li>
+                <li><a href="shop.html" class="nav-link active">Shop</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="shop-header">
+            <h1>FAN SHOP</h1>
+            <p>Wear your colors with pride. Support Sita Mbili FC by purchasing our official merchandise.</p>
+            <div class="underline"></div>
+        </header>
+
+        <div class="features">
+            <div>
+                <i class="fas fa-shield-alt"></i>
+                <h4>Official Gear</h4>
+                <p style="font-size: 0.9rem; color: #888;">100% Authentic Merchandise</p>
+            </div>
+            <div>
+                <i class="fas fa-truck"></i>
+                <h4>Local Delivery</h4>
+                <p style="font-size: 0.9rem; color: #888;">Quick pickup & shipping</p>
+            </div>
+            <div>
+                <i class="fas fa-star"></i>
+                <h4>Premium Quality</h4>
+                <p style="font-size: 0.9rem; color: #888;">Built for the pitch & street</p>
+            </div>
+        </div>
+
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="jersey1.jpg" alt="Home Jersey">
+                    <div class="tag">Available Now</div>
+                </div>
+                <div class="product-info">
+                    <span style="font-size: 0.8rem; color: #aaa; text-transform: uppercase;">Jerseys</span>
+                    <h3 style="margin: 0.5rem 0;">Sita Mbili FC - Home Jersey 2024/25</h3>
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem;">
+                        <span class="product-price">KES 1,500</span>
+                        <a href="https://wa.me/+254790591621?text=Hello, I would like to order the Home Jersey"
+                            target="_blank" class="buy-btn">
+                            <i class="fab fa-whatsapp"></i> Buy Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="jersey2.jpg" alt="Away Jersey">
+                    <div class="tag">Available Now</div>
+                </div>
+                <div class="product-info">
+                    <span style="font-size: 0.8rem; color: #aaa; text-transform: uppercase;">Jerseys</span>
+                    <h3 style="margin: 0.5rem 0;">Sita Mbili FC - Away Jersey 2024/25</h3>
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem;">
+                        <span class="product-price">KES 1,500</span>
+                        <a href="https://wa.me/+254790591621?text=Hello, I would like to order the Away Jersey"
+                            target="_blank" class="buy-btn">
+                            <i class="fab fa-whatsapp"></i> Buy Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="jersey3.webp" alt="Third Kit">
+                    <div class="tag">New Arrival</div>
+                </div>
+                <div class="product-info">
+                    <span style="font-size: 0.8rem; color: #aaa; text-transform: uppercase;">Jerseys</span>
+                    <h3 style="margin: 0.5rem 0;">Sita Mbili FC - Third Kit 2024/25</h3>
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem;">
+                        <span class="product-price">KES 1,500</span>
+                        <a href="https://wa.me/+254790591621?text=Hello, I would like to order the Third Kit"
+                            target="_blank" class="buy-btn">
+                            <i class="fab fa-whatsapp"></i> Buy Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="order-info">
+            <h2 style="color: var(--color-secondary-yellow); margin-bottom: 1rem;">Order via WhatsApp or Call</h2>
+            <p style="font-size: 1.8rem; font-weight: 800;">+254 790 591 621</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">Click a button above to order via WhatsApp, or call us directly!
+            </p>
+        </div>
+    </div>
+
+    <footer style="margin-top: 5rem;">
+        <div class="container" style="text-align: center; opacity: 0.6; font-size: 0.9rem;">
+            <p>&copy; 2024 Sitambili Football Club. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
