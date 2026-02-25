@@ -5,30 +5,34 @@ Website: www.erickkelwa.dev
 
 SUMMARY
 -------------------------
-Passionate Creative Developer with experience in building digital experiences. Specialized in Front-end development using React, JavaScript, and modern CSS/Animations.
+A dedicated and detail-oriented Software Developer with strong skills in front-end and full-stack development. I combine technical expertise with excellent communication, analytical thinking, and problem-solving skills. I excel in creating clean, functional, and user-centered digital solutions while continuously learning and adapting to modern technologies.
 
 SKILLS
 -------------------------
-- Languages: HTML5, CSS3, JavaScript (ES6+), TypeScript
-- Frameworks: React, Next.js, Vue.js
-- Tools: Git, Webpack, Vite
-- Soft Skills: Problem-solving, Communication, Team Leadership
+- Languages: HTML5, CSS3, JavaScript (ES6+), PHP
+- Frameworks: React.js, Bootstrap 5
+- Tools: Git, GitHub, VS Code, EmailJS
+- Soft Skills: Analytical Thinking, Problem-solving, Technical Documentation, Team Collaboration
 
 EXPERIENCE
 -------------------------
-Senior Developer | Tech Solutions Inc. | 2023 - Present
-- Led a team of developers to build a SaaS platform.
-- improved site performance by 40%.
+Software Developer Intern | Tech Innovators Ltd. | 2025 - Present
+- Develop web applications using HTML, CSS, JavaScript, and backend APIs.
+- Collaborate with teams to enhance user experience and application performance.
+- Assist in debugging, testing, and maintaining code quality.
 
-Frontend Developer | Creative Agency | 2020 - 2023
-- Developed award-winning marketing websites.
-- implemented complex GSAP animations.
+Freelance Web Developer | Self-Employed | 2024
+- Designed and developed responsive websites for small businesses using modern stack.
+- Delivered production-ready websites aligned with client requirements.
+- Enhanced client communication through clear planning and project updates.
 
 EDUCATION
 -------------------------
-BS in Computer Science | University of Tech | 2016 - 2020
+Diploma in Software Development | Institute of Software Technologies | Expected 2026
+
 
 PROJECTS
 -------------------------
-- E-Commerce Platform: React, Node.js, Stripe
-- Task Manager: Vue.js, Firebase
+- Sitambili FC: Premium football club website with dynamic league tables and match results.
+- ECO-SHOP: Sustainable luxury e-commerce platform with minimalist design and community selling.
+- EduPortal Kenya: Comprehensive university application portal for multiple Kenyan institutions.
